@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Obuc" />
+  <img src="./assets/img/tela.png" alt="Obuc" />
 
 &#xa0;
 
