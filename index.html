@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./assets/style.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="head">
+    <div>
+      <h1 class="title">Controle de locais de trabalho</h1>
+    </div>
+
+    <div class="login">
+      <div class="login-icons">
+        <i class='button-login bx bx-home'></i>
+        <i class='button-login bx bx-user-circle'></i>
+      </div>
+
+      <div class="login-user">
+        <h3>usuário</h3>
+        <p>Administrador</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="menu">
+      <h4 class="title-list"><i class='bx bxs-cog'></i> Administração</h4>
+      <ul class="menu-list">
+        <li class="menu-buttons"><a href="#"><span>Administradores</span></a></li>
+        <li class="menu-buttons"><a href="#"><span>Áreas</span></a></li>
+        <li class="menu-buttons"><a href="#"><span>Locais de trabalho</span></a></li>
+        <li class="menu-buttons"><a href="#"><span>Habilidades</span></a></li>
+        <li class="menu-buttons"><a href="#"><span>Log</span></a></li>
+        <li class="menu-buttons"><a href="#"><span>Responsáveis</span></a></li>
+      </ul>
+    </section>
+
+    <section class="principal">
+      <h3 class="title-table">Locais de trabalho</h3>
+
+      <div id="form">
+        <div class="crud">
+          <div class="input-group mb-3">
+            <label class="input-group-text button-predios" for="inputGroupSelect01">Prédios</label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>Selecione um prédio</option>
+              <option>Prédio 1</option>
+              <option>Prédio 2</option>
+              <option>Prédio 3</option>
+              <option>Prédio 4</option>
+              <option>Prédio 5</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Locais</span>
+            <input name="local" type="text" class="form-control" placeholder="Insira um novo local" id="input-locais"
+              required>
+          </div>
+
+          <div>
+            <button type="button" class="btn material-icons" id="add-button"><span>
+                add
+              </span></button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <table class="table-hover">
+          <thead>
+            <tr>
+              <th class="th" scope="col">Prédios</th>
+              <th class="th" scope="col">Locais de trabalho</th>
+              <th class="th" scope="col">Editar / Excluir</th>
+            </tr>
+          </thead>
+          <tbody id="table">
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h4 class="modal-title">Editar</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <div class="modal-body">
+            <div id="form">
+              <div class="crud">
+                <div class="input-group mb-3">
+                  <label class="input-group-text button-predios" for="inputGroupSelect01">Prédios</label>
+                  <select class="form-select" id="inputGroupSelect01-edit" required>
+                    <option selected>...</option>
+                    <option>Prédio 1</option>
+                    <option>Prédio 2</option>
+                    <option>Prédio 3</option>
+                    <option>Prédio 4</option>
+                    <option>Prédio 5</option>
+                  </select>
+                </div>
+
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Locais</span>
+                  <input name="local" type="text" class="form-control" placeholder="Insira um novo local"
+                    id="input-locais-edit" required>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-cancel" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger btn-salvar" data-dismiss="modal"
+                  onclick="saveEdit()">Salvar</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+          integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+          integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./assets/script.js"></script>
+</body>
+
+</html>
