@@ -94,10 +94,6 @@ header {
   transition: 0.35s;
 }
 
-.bx:hover {
-  color: rgb(136, 30, 66);
-}
-
 .bx-message-square-edit:hover {
   color: rgb(28, 105, 28);
 }
